@@ -25,14 +25,16 @@ class Solution:
         list_letter = []
         for letter in s:
             prev = ""
-            if letter in list_letter:
-                cash_substring.append("".join(self.remove_duplicate_string(list_letter)))
-                list_letter.clear()
-                prev = cash_substring[-1].replace(letter, "")
+            for word in list_letter:
+                if letter in word:
+                    cash_substring.append("".join(self.remove_duplicate_string(list_letter)))
+                    list_letter.clear()
+                    if letter != cash_substring[-1][-1]:
+                        prev = cash_substring[-1].replace(letter, "")
             list_letter.append(letter + prev)
         cash_substring.append("".join(self.remove_duplicate_string(list_letter)))
         return self.find_max_str(cash_substring)
 
 
 solution = Solution()
-print(solution.length_of_longest_substring("pwwkew"))
+print(solution.length_of_longest_substring("ckilbkd"))
