@@ -1,12 +1,7 @@
 from typing import List
-from itertools import accumulate
 
 
 class Solution:
-
-    @staticmethod
-    def sort_string(word):
-        return tuple(accumulate(sorted(word)))[-1]
 
     @staticmethod
     def is_anagram(s: str, t: str) -> bool:
@@ -16,7 +11,8 @@ class Solution:
         sorted_t = sorted(t)
         return sorted_s == sorted_t
 
-    def get_dict_anagrams(self, list_words: List[str]):
+    @staticmethod
+    def get_dict_anagrams(list_words: List[str]):
         """
         """
         sorted_list_words: list = []
