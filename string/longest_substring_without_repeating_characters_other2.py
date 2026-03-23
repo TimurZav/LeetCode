@@ -13,7 +13,7 @@ def longest_unique_substtr(s):
 
 # Driver code
 if __name__ == '__main__':
-    string = "adsvdf"
+    string = "pwwkew"
     print("The input is ", string)
 
     length = longest_unique_substtr(string)

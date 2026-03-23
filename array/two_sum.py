@@ -16,3 +16,21 @@ class Solution:
 
 solution = Solution()
 print(solution.two_sum([2, 5, 5, 11], 10))
+
+
+
+class Solution2:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        result = []
+        for i, digit in enumerate(nums):
+            try:
+                two_digit = nums[i + 1:].index(target - digit) + i + 1
+            except ValueError:
+                continue
+            result.extend((i, two_digit))
+            break
+        return result
+
+
+solution = Solution2()
+print(solution.twoSum([3,2,4], 6))
